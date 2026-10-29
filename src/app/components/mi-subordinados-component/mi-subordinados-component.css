@@ -2,6 +2,13 @@
   animation: page-enter 360ms ease-out both;
 }
 
+.page-heading {
+  align-items: flex-start;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
 .eyebrow {
   color: #709086;
   font-size: 0.7rem;
@@ -23,6 +30,103 @@ h1 {
   color: #68827a;
   font-size: 0.98rem;
   margin: 14px 0 0;
+}
+
+.team-count {
+  background: #d7f27e;
+  border-radius: 100px;
+  color: #3e6659;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 8px 11px;
+  white-space: nowrap;
+}
+
+.team-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.employee-card {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e3ebe5;
+  border-radius: 12px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(240px, 1fr) 150px 140px;
+  padding: 18px 22px;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.employee-card:hover {
+  border-color: #b7d08b;
+  box-shadow: 0 8px 24px rgba(23, 60, 54, 0.06);
+  transform: translateY(-2px);
+}
+
+.employee-identity {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  min-width: 0;
+}
+
+.employee-avatar {
+  align-items: center;
+  background: #eaf1ec;
+  border-radius: 50%;
+  color: #315a52;
+  display: inline-flex;
+  flex: 0 0 46px;
+  font-size: 1rem;
+  font-weight: 800;
+  height: 46px;
+  justify-content: center;
+  width: 46px;
+}
+
+.employee-id,
+.employee-role {
+  color: #799189;
+  font-size: 0.72rem;
+  margin: 0;
+}
+
+.employee-id {
+  margin-bottom: 4px;
+}
+
+.employee-identity h2 {
+  color: #234a42;
+  font-size: 0.98rem;
+  margin: 0 0 4px;
+}
+
+.employee-detail {
+  border-left: 1px solid #e3ebe5;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-left: 20px;
+}
+
+.detail-label {
+  color: #799189;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.employee-detail strong {
+  color: #234a42;
+  font-size: 0.9rem;
+}
+
+.employee-detail:first-of-type strong {
+  color: #4c6b28;
 }
 
 .empty-state {
@@ -73,4 +177,34 @@ h1 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (max-width: 700px) {
+  .page-heading {
+    display: block;
+  }
+
+  .team-count {
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .team-list {
+    margin-top: 32px;
+  }
+
+  .employee-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .employee-identity {
+    grid-column: 1 / -1;
+  }
+
+  .employee-detail {
+    border-left: 0;
+    border-top: 1px solid #e3ebe5;
+    padding: 14px 0 0;
+  }
+
 }

@@ -36,15 +36,6 @@
         Iniciar sesión
       </button>
 
-      @if (mensaje) {
-        <p
-          class="form-message"
-          aria-live="polite"
-          [class.form-message--error]="!mensaje.startsWith('Token:')"
-        >
-          {{ mensaje }}
-        </p>
-      }
     </form>
   </section>
 </main>

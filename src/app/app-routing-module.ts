@@ -5,12 +5,13 @@ import { HomeComponent } from './components/home-component/home-component';
 import { LoginComponent } from './components/login-component/login-component';
 import { MiSubordinadosComponent } from './components/mi-subordinados-component/mi-subordinados-component';
 import { MiPerfilComponent } from './components/mi-perfil-component/mi-perfil-component';
+import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes = [
-  {path:"", component: HomeComponent},
-  {path:"login", component: LoginComponent},
-  {path:"perfil", component:MiPerfilComponent},
-  {path: "subordinados" , component: MiSubordinadosComponent}
+  {path:"home", component: HomeComponent},
+  {path:"", component: LoginComponent},
+  {path:"perfil", component:MiPerfilComponent, canActivate:[AuthGuard]},
+  {path: "subordinados" , component: MiSubordinadosComponent, canActivate:[AuthGuard]},
 
 ]
 

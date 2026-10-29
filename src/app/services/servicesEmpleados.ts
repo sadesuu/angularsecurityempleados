@@ -26,10 +26,9 @@ export class ServiceEmpleados {
   }
 
   async getSubordinadosAsync(): Promise<Empleado[]> {
-    let req = 'api/empleados/subordinados';
+    let request = 'api/empleados/subordinados';
     let token = sessionStorage.getItem('TOKEN');
     let header = new HttpHeaders().set('Authorization', 'bearer ' + token);
-    return firstValueFrom(this._http.get<Empleado[]>(this.url + req, { headers: header }));
-
+    return firstValueFrom(this._http.get<Empleado[]>(this.url + request, { headers: header }));
   }
 }

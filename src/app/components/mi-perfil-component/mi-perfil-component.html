@@ -8,47 +8,37 @@
     <span class="status-label">Perfil activo</span>
   </div>
 
-  @if (cargando) {
-    <div class="profile-skeleton" aria-label="Cargando perfil">
-      <div class="skeleton skeleton-avatar"></div>
-      <div class="skeleton-lines">
-        <div class="skeleton skeleton-title"></div>
-        <div class="skeleton skeleton-copy"></div>
+  @if(empleado) {
+  <article class="profile-card">
+    <header class="profile-header">
+      <div class="profile-avatar" aria-hidden="true">
+        {{ empleado.apellido.charAt(0).toUpperCase() }}
+      </div>
+      <div>
+        <p class="profile-overline">Empleado #{{ empleado.idEmpleado }}</p>
+        <h2>{{ empleado.apellido }}</h2>
+        <p class="profile-role">{{ empleado.oficio }}</p>
+      </div>
+    </header>
+
+    <div class="details-grid">
+      <div class="detail-item">
+        <span class="detail-label">Apellido</span>
+        <strong>{{ empleado.apellido }}</strong>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Oficio</span>
+        <strong>{{ empleado.oficio }}</strong>
+      </div>
+      <div class="detail-item detail-item--highlight">
+        <span class="detail-label">Salario</span>
+        <strong>{{ empleado.salario | number: '1.0-2' }} €</strong>
+      </div>
+      <div class="detail-item">
+        <span class="detail-label">Director</span>
+        <strong>{{ empleado.director }}</strong>
       </div>
     </div>
-  } @else if (mensaje) {
-    <p class="form-message" role="alert">{{ mensaje }}</p>
-  } @else if (empleado) {
-    <article class="profile-card">
-      <header class="profile-header">
-        <div class="profile-avatar" aria-hidden="true">
-          {{ empleado.apellido.charAt(0).toUpperCase() }}
-        </div>
-        <div>
-          <p class="profile-overline">Empleado #{{ empleado.idEmpleado }}</p>
-          <h2>{{ empleado.apellido }}</h2>
-          <p class="profile-role">{{ empleado.oficio }}</p>
-        </div>
-      </header>
-
-      <div class="details-grid">
-        <div class="detail-item">
-          <span class="detail-label">Apellido</span>
-          <strong>{{ empleado.apellido }}</strong>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Oficio</span>
-          <strong>{{ empleado.oficio }}</strong>
-        </div>
-        <div class="detail-item detail-item--highlight">
-          <span class="detail-label">Salario</span>
-          <strong>{{ empleado.salario | number: '1.0-2' }} €</strong>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">Director</span>
-          <strong>{{ empleado.director }}</strong>
-        </div>
-      </div>
-    </article>
+  </article>
   }
 </section>
