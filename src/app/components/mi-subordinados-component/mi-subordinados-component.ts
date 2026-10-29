@@ -21,6 +21,5 @@ export class MiSubordinadosComponent implements OnInit {
   async ngOnInit(): Promise<void> {
       this.empleados = await this._service.getSubordinadosAsync();
       this._cdr.detectChanges();
- 
   }
 }

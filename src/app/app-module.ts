@@ -9,6 +9,8 @@ import { MiPerfilComponent } from './components/mi-perfil-component/mi-perfil-co
 import { MiSubordinadosComponent } from './components/mi-subordinados-component/mi-subordinados-component';
 import { provideHttpClient } from '@angular/common/http';
 import { ServiceEmpleados } from './services/servicesEmpleados';
+import { AuthGuard } from './guards/auth-guard';
+import { EjemploSignalComponent } from './components/ejemplo-signal-component/ejemplo-signal-component';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,15 @@ import { ServiceEmpleados } from './services/servicesEmpleados';
     LoginComponent,
     MiPerfilComponent,
     MiSubordinadosComponent,
+    EjemploSignalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(), ServiceEmpleados],
+  providers: [
+    AuthGuard,
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient(),
+    ServiceEmpleados,
+  ],
   bootstrap: [App],
 })
 export class AppModule {}
