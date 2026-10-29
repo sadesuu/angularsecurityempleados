@@ -1,0 +1,50 @@
+<main class="login-page">
+  <section class="login-card" aria-labelledby="login-title">
+    <div class="brand-mark" aria-hidden="true">E</div>
+    <p class="eyebrow">Área de empleados</p>
+    <h1 id="login-title">Bienvenido de nuevo</h1>
+    <p class="login-intro">Accede a tu espacio de trabajo.</p>
+
+    <form class="login-form" (submit)="logInEmpleado(); $event.preventDefault()" novalidate>
+      <div class="field">
+        <label for="cajauser">Usuario</label>
+        <input
+          #cajauser
+          id="cajauser"
+          name="user"
+          type="text"
+          autocomplete="username"
+          placeholder="Escribe tu usuario"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <label for="cajapassword">Contraseña</label>
+        <input
+          #cajapassword
+          id="cajapassword"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="Escribe tu contraseña"
+          required
+        />
+      </div>
+
+      <button type="submit">
+        Iniciar sesión
+      </button>
+
+      @if (mensaje) {
+        <p
+          class="form-message"
+          aria-live="polite"
+          [class.form-message--error]="!mensaje.startsWith('Token:')"
+        >
+          {{ mensaje }}
+        </p>
+      }
+    </form>
+  </section>
+</main>

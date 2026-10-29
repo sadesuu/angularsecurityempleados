@@ -1,0 +1,39 @@
+<aside class="sidebar">
+  <div class="sidebar-top">
+    <a class="brand" routerLink="/home" aria-label="Ir a inicio">
+      <span class="brand-mark">E</span>
+      <span class="brand-copy">
+        <strong>Empleados</strong>
+        <small>Panel de gestión</small>
+      </span>
+    </a>
+
+    <div class="section-label">Espacio de trabajo</div>
+
+    <nav class="navigation" aria-label="Navegación principal">
+      <a class="nav-link" routerLink="/home" routerLinkActive="nav-link--active" [routerLinkActiveOptions]="{ exact: true }">
+        <span class="nav-icon" aria-hidden="true">⌂</span>
+        <span>Home</span>
+      </a>
+      <a class="nav-link" routerLink="/subordinados" routerLinkActive="nav-link--active">
+        <span class="nav-icon" aria-hidden="true">◎</span>
+        <span>Mis subordinados</span>
+      </a>
+      <a class="nav-link" routerLink="/perfil" routerLinkActive="nav-link--active">
+        <span class="nav-icon" aria-hidden="true">◯</span>
+        <span>Mi perfil</span>
+      </a>
+    </nav>
+  </div>
+
+  <div class="sidebar-footer">
+    <div class="profile-summary">
+      <span class="avatar">MS</span>
+      <span class="profile-details">
+        <strong>María Sánchez</strong>
+        <small>Administradora</small>
+      </span>
+      <span class="profile-status" aria-label="Sesión activa"></span>
+    </div>
+  </div>
+</aside>

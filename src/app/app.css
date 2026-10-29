@@ -1,0 +1,67 @@
+:host {
+  display: block;
+}
+
+.app-shell {
+  background: #f5f7f4;
+  display: flex;
+  min-height: 100dvh;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-content {
+  margin: 0 auto;
+  max-width: 1160px;
+  padding: 44px 48px 64px;
+}
+
+.mobile-header {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .app-shell {
+    display: block;
+  }
+
+  .mobile-header {
+    align-items: center;
+    background: #112d2b;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 18px;
+  }
+
+  .brand--mobile .brand-mark {
+    height: 34px;
+    width: 34px;
+  }
+
+  .brand--mobile .brand-name {
+    color: #f5faf7;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .mobile-profile {
+    align-items: center;
+    background: #315a52;
+    border-radius: 50%;
+    color: #f5faf7;
+    display: inline-flex;
+    font-size: 0.68rem;
+    font-weight: 800;
+    height: 34px;
+    justify-content: center;
+    text-decoration: none;
+    width: 34px;
+  }
+
+  .page-content {
+    padding: 28px 18px 44px;
+  }
+}

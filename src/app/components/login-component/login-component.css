@@ -1,0 +1,143 @@
+:host {
+  display: block;
+}
+
+.login-page {
+  align-items: center;
+  background: #f5f7f4;
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 24px;
+}
+
+.login-card {
+  background: #fff;
+  border: 1px solid #e3ebe5;
+  border-radius: 14px;
+  max-width: 430px;
+  padding: 42px;
+  width: 100%;
+}
+
+.brand-mark {
+  align-items: center;
+  background: #d7f27e;
+  border-radius: 11px;
+  color: #173c36;
+  display: inline-flex;
+  font-size: 1.15rem;
+  font-weight: 800;
+  height: 42px;
+  justify-content: center;
+  margin-bottom: 30px;
+  width: 42px;
+}
+
+.eyebrow {
+  color: #709086;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+
+h1 {
+  color: #173c36;
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  letter-spacing: -0.07em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.login-intro {
+  color: #68827a;
+  font-size: 0.92rem;
+  margin: 13px 0 32px;
+}
+
+.login-form {
+  display: grid;
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  color: #234a42;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+input {
+  background: #fbfcfb;
+  border: 1px solid #cadbd2;
+  border-radius: 8px;
+  color: #173c36;
+  font-size: 0.9rem;
+  outline: none;
+  padding: 13px 14px;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+input::placeholder {
+  color: #8da49c;
+}
+
+input:focus {
+  border-color: #6a9a69;
+  box-shadow: 0 0 0 3px rgba(106, 154, 105, 0.18);
+}
+
+button {
+  background: #173c36;
+  border: 0;
+  border-radius: 8px;
+  color: #f5faf7;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-top: 4px;
+  min-height: 48px;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+button:hover:not(:disabled) {
+  background: #28564d;
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.form-message {
+  color: #426d51;
+  font-size: 0.8rem;
+  margin: 0;
+  min-height: 18px;
+  text-align: center;
+}
+
+.form-message--error {
+  color: #a2493e;
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 30px 22px;
+  }
+}
